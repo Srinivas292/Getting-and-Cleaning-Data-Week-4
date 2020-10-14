@@ -33,8 +33,7 @@ activitylabel <- Y_total[,-1]
 # 4. Appropriately labels the data set with descriptive variable names.
 colnames(X_total) <- variable_names[selected_var[,1],2]
 
-# 5. From the data set in step 4, creates a second, independent tidy data set with the average
-# of each variable for each activity and each subject.
+# 5. From the data set in step 4, creates a second, independent tidy data set with the averageof each variable for each activity and each subject.
 colnames(Sub_total) <- "subject"
 total <- cbind(X_total, activitylabel, Sub_total)
 total_mean <- total %>% group_by(activitylabel, subject) %>% summarize_each(funs(mean))
